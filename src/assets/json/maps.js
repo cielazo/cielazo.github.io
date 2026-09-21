@@ -1,0 +1,42 @@
+window.DB_DATA = window.DB_DATA || {};
+DB_DATA.maps = [
+  { id:'pradera', name:'Pradera Soleada', price:0, desc:'El clásico: pasto fresco y cielos limpios.', perk:'Equilibrado',
+    theme:{ sky:['#49BEE8','#63CDEF','#8ADCF5'],
+      sun:{ color:'#FFD951', x:0.78, y:0.2, r:52 },
+      far:'#BDEAF7',
+      mountains:{ base:'#7FCBEA', light:'#9AD8F0', dark:'#6BB8DC', snow:true },
+      hills:['#7ED09A','#5FC487'],
+      ground:{ top:'#6ED07A', topHi:'#8FE096', front:'#57BE67', dark:'#46A456' },
+      plants:{ leaf:'#3FA873', leafLight:'#57C98A', leafDark:'#34875A', trunk:'#8A5A3B', rock:'#9AA7B4' },
+      deco:'meadow', cloud:'#FFFFFF', cloudShade:'#D7EDF8', stars:false } },
+
+  { id:'desierto', name:'Dunas Doradas', price:1600, desc:'El viento de cola te empuja de vez en cuando.', perk:'Viento de cola',
+    theme:{ sky:['#FFA64B','#FFC46E','#FFDDA0'],
+      sun:{ color:'#FF7A4D', x:0.74, y:0.26, r:66 },
+      far:'#F6CE93',
+      mountains:{ base:'#E0995B', light:'#F0B476', dark:'#C97F44', snow:false },
+      hills:['#F2C879','#E8B862'],
+      ground:{ top:'#F2D492', topHi:'#FBE3AC', front:'#DDB268', dark:'#C2984F' },
+      plants:{ leaf:'#4CAF6D', leafLight:'#66C485', leafDark:'#3E9459', trunk:'#9A6B3E', rock:'#B98F5C' },
+      deco:'desert', cloud:'#FFF6E8', cloudShade:'#F0DDBD', stars:false, wind:true } },
+
+  { id:'nieve', name:'Picos Nevados', price:2800, desc:'El suelo helado rebota más alto y desliza más.', perk:'Rebotes y derrapes',
+    theme:{ sky:['#7FC2EC','#A9D9F5','#CFE9FA'],
+      sun:{ color:'#FFF6D8', x:0.8, y:0.2, r:44 },
+      far:'#E3F0F9',
+      mountains:{ base:'#D9EAF6', light:'#F0F7FC', dark:'#BCD6E8', snow:true },
+      hills:['#E8F3FB','#D5E9F6'],
+      ground:{ top:'#F7FBFF', topHi:'#FFFFFF', front:'#DCEBF6', dark:'#C2DAEB' },
+      plants:{ leaf:'#2E7D5B', leafLight:'#459871', leafDark:'#23654A', trunk:'#6E4F35', rock:'#A9BCCB' },
+      deco:'snow', cloud:'#FFFFFF', cloudShade:'#E2F1FA', stars:false, slippery:true } },
+
+  { id:'noche', name:'Cumbres Estrelladas', price:4200, desc:'Las monedas valen 25% más bajo las estrellas.', perk:'Monedas x1.25',
+    theme:{ sky:['#232A5C','#2E3775','#3C4A8F'],
+      sun:{ color:'#F4F6FF', x:0.78, y:0.18, r:34, moon:true },
+      far:'#2A3163',
+      mountains:{ base:'#1D2350', light:'#2A3163', dark:'#151A3E', snow:true },
+      hills:['#2B336B','#232A5C'],
+      ground:{ top:'#3D4680', topHi:'#4C5595', front:'#2E3563', dark:'#232A4F' },
+      plants:{ leaf:'#23406B', leafLight:'#2F548A', leafDark:'#1A3155', trunk:'#3A3358', rock:'#565A85' },
+      deco:'night', cloud:'#8E9AD6', cloudShade:'#6F7BB8', stars:true, coinMult:1.25 } }
+];

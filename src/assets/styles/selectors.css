@@ -1,0 +1,26 @@
+.hscroll{ flex:1; display:flex; gap:14px; overflow-x:auto; overflow-y:hidden; padding:8px 18px calc(16px + env(safe-area-inset-bottom)); align-items:stretch; scrollbar-width:thin; }
+.pcard{
+  flex:0 0 auto; width:min(250px,30vw); min-width:210px; background:#fff; border-radius:20px; padding:12px;
+  box-shadow:0 8px 0 rgba(23,58,79,.10); display:flex; flex-direction:column; gap:8px;
+  border:3px solid transparent;
+}
+.pcard.selected{ border-color:var(--sun); }
+.pcard.locked{ opacity:.96; }
+.pcard .visual{ height:clamp(96px,24vh,150px); background:#DDF2FB; border-radius:14px; display:grid; place-items:center; overflow:hidden; position:relative; }
+.pcard .visual img{ height:88%; filter:drop-shadow(0 5px 0 rgba(23,58,79,.12)); }
+.pcard .visual canvas{ width:100%; height:100%; }
+.pcard .visual .lock-badge{ position:absolute; right:8px; top:8px; width:32px; height:32px; border-radius:10px; background:rgba(23,58,79,.75); color:#fff; display:grid; place-items:center; }
+.pcard h4{ margin:0; font-size:18px; }
+.pcard .species{ font-size:11.5px; font-weight:600; color:var(--ink2); letter-spacing:.6px; text-transform:uppercase; }
+.ability{ background:var(--card2); border-radius:12px; padding:8px 10px; font-size:12.5px; line-height:1.35; color:var(--ink2); display:flex; gap:8px; align-items:flex-start; }
+.ability .ic{ color:var(--sky-deep); margin-top:2px; }
+.ability b{ color:var(--ink); display:block; }
+.ability .mode{ display:inline-block; margin-top:3px; font-size:10px; font-weight:700; letter-spacing:1px; color:var(--sky-deep); }
+.pcard .foot{ margin-top:auto; display:flex; align-items:center; gap:8px; }
+.price{ display:inline-flex; align-items:center; gap:6px; font-weight:700; color:var(--ink); }
+.price .ic{ width:18px; height:18px; }
+.pcard .foot .btn{ margin-left:auto; padding:8px 14px; font-size:14px; border-radius:12px; }
+.tagchip{ align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:1px; padding:3px 9px; border-radius:999px; background:var(--grass); color:#fff; }
+.tagchip.perk{ background:var(--sun); color:#5C3D00; }
+.pcard.wide{ width:min(330px,42vw); min-width:280px; }
+.pcard .preview{ width:100%; height:clamp(90px,20vh,130px); border-radius:12px; display:block; }

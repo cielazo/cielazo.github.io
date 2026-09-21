@@ -1,0 +1,1 @@
+setTimeout(() => location.replace('src/pages/home.html'), 2200);

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Cielazo — Inicio</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles/base.css">
+<link rel="stylesheet" href="../assets/styles/home.css">
+</head>
+<body>
+<div id="rotate"><div><span class="ic big" data-icon="rotate"></span><p>Gira tu dispositivo<br>para jugar</p></div></div>
+
+<div class="bg-scene">
+  <div class="sun"></div>
+  <svg class="hills" viewBox="0 0 1000 220" preserveAspectRatio="none">
+    <path d="M0 140 Q140 60 300 120 T620 110 T1000 130 V220 H0 Z" fill="#79CB97"/>
+    <path d="M0 180 Q200 110 430 160 T1000 165 V220 H0 Z" fill="#5FC487"/>
+  </svg>
+  <div class="bg-cloud b1"></div><div class="bg-cloud b2"></div><div class="bg-cloud b3"></div>
+</div>
+
+<header class="topbar">
+  <!--<div class="logo-mini">CIELAZO</div>-->
+  <button id="btn-settings" class="icon-btn" aria-label="Ajustes"><span class="ic" data-icon="gear"></span></button>
+  <div class="wallet">
+    <span class="ic" data-icon="coin"></span><b id="wallet-amount">0</b>
+    <button class="add" id="btn-add-coins" aria-label="Comprar monedas"><span class="ic" data-icon="plus"></span></button>
+  </div>
+</header>
+
+<main class="home-wrap">
+  <section class="hero">
+    <h1 class="logo"><span class="w">C</span><span class="y">I</span><span class="w">E</span><span class="c">L</span><span class="w">A</span><span class="y">Z</span><span class="w">O</span></h1>
+    <p class="tag" style="margin-bottom: 15px;">¿Hasta dónde llegarás?</p>
+    <button id="btn-play" class="btn btn-primary btn-big" style="margin-bottom: 10px;">
+      <span class="ic" data-icon="play"></span>JUGAR
+    </button>
+    <div class="chip"><span class="ic gold" data-icon="trophy"></span>Récord: <b id="best">0 m</b></div>
+  </section>
+
+  <aside class="equip">
+    <div class="card equip-card">
+      <div class="eq-t">Personaje</div>
+      <div id="eq-char" class="eq-visual"></div>
+      <div id="eq-char-name" class="eq-name">—</div>
+      <a class="btn btn-ghost" href="characters.html"><span class="ic" data-icon="person"></span>Cambiar</a>
+    </div>
+    <div class="card equip-card">
+      <div class="eq-t">Mundo</div>
+      <div class="eq-visual"><canvas id="eq-map" width="360" height="180"></canvas></div>
+      <div id="eq-map-name" class="eq-name">—</div>
+      <a class="btn btn-ghost" href="maps.html"><span class="ic" data-icon="map"></span>Cambiar</a>
+    </div>
+  </aside>
+
+  <nav class="dock">
+    <a class="dock-btn" href="characters.html"><span class="ic" data-icon="person"></span>Personajes</a>
+    <a class="dock-btn" href="maps.html"><span class="ic" data-icon="map"></span>Mapas</a>
+    <button id="btn-missions" class="dock-btn"><span class="ic" data-icon="target"></span>Misiones<i id="miss-dot" class="dot hidden"></i></button>
+    <a class="dock-btn" href="shop.html"><span class="ic" data-icon="cart"></span>Tienda</a>
+  </nav>
+</main>
+
+<script src="../assets/scripts/utils.js"></script>
+<script src="../assets/scripts/storage.js"></script>
+<script src="../assets/scripts/audio.js"></script>
+<script src="../assets/scripts/ui.js"></script>
+<script src="../assets/json/config.js"></script>
+<script src="../assets/json/characters.js"></script>
+<script src="../assets/json/maps.js"></script>
+<script src="../assets/json/shop.js"></script>
+<script src="../assets/scripts/db.js"></script>
+<script src="../assets/scripts/world.js"></script>
+<script src="../assets/scripts/page-home.js"></script>
+</body>
+</html>

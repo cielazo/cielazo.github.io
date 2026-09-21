@@ -1,0 +1,13 @@
+.splash{ height:100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; overflow:hidden; }
+.splash .logo{ animation:pop .5s cubic-bezier(.2,1.5,.4,1); }
+.load{ width:min(240px,60vw); height:12px; border-radius:999px; background:rgba(255,255,255,.5); overflow:hidden; margin-top:14px; box-shadow:inset 0 2px 0 rgba(23,58,79,.12); }
+.load i{ display:block; height:100%; width:40%; border-radius:999px; background:#fff; animation:load 1.6s ease-in-out infinite; }
+@keyframes load{ 0%{ transform:translateX(-110%) } 100%{ transform:translateX(300%) } }
+.sp-cloud{ position:absolute; background:#fff; border-radius:999px; opacity:.9; }
+.sp-cloud::before,.sp-cloud::after{ content:''; position:absolute; background:#fff; border-radius:50%; bottom:38%; }
+.sp-cloud::before{ width:58%; height:130%; left:12%; }
+.sp-cloud::after{ width:42%; height:100%; right:12%; }
+.c1{ width:150px; height:44px; top:20%; left:8%; animation:drift 16s linear infinite; }
+.c2{ width:100px; height:32px; top:64%; right:12%; animation:drift 20s linear infinite reverse; }
+.c3{ width:120px; height:38px; top:34%; right:28%; opacity:.6; animation:drift 24s linear infinite; }
+@keyframes drift{ 0%{ transform:translateX(-6vw) } 50%{ transform:translateX(6vw) } 100%{ transform:translateX(-6vw) } }

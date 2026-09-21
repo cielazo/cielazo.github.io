@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Cielazo — Vuela</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles/base.css">
+<link rel="stylesheet" href="../assets/styles/game.css">
+</head>
+<body>
+<div id="rotate"><div><span class="ic big" data-icon="rotate"></span><p>Gira tu dispositivo<br>para jugar</p></div></div>
+
+<canvas id="game-canvas"></canvas>
+
+<div id="hud">
+  <button id="btn-pause" class="hbtn" aria-label="Pausa"><span class="ic" data-icon="pause"></span></button>
+  <div id="hud-dist">0 m</div>
+  <div id="hud-coins"><span class="ic" data-icon="coin"></span><b>0</b></div>
+  <button id="btn-ability" class="hidden" aria-label="Habilidad"><span class="ic"></span><b id="ab-uses">1</b></button>
+  <div id="boost-chip" class="hidden"><span class="ic" data-icon="rocket"></span><i id="boost-track"><b id="boost-fill"></b></i></div>
+</div>
+
+<div id="tut" class="hidden">
+  <div class="tut-card">
+    <svg viewBox="0 0 48 48" class="tut-hand"><path d="M8 36C10 20 22 12 38 12" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M28 8l12 4-6 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Mantén presionado y arrastra hacia atrás para apuntar</span>
+  </div>
+</div>
+
+<div id="panel-result" class="hidden">
+  <div class="result-card">
+    <div class="res-title">¡CAÍDA!</div>
+    <div id="res-record" class="res-record hidden"><span class="ic" data-icon="trophy"></span>¡NUEVO RÉCORD! <b>+80</b></div>
+    <div id="res-dist" class="res-dist">0 m</div>
+    <div class="res-rows">
+      <div><span>Monedas del vuelo</span><b id="res-fly">0</b></div>
+      <div><span>Bono por distancia</span><b id="res-base">0</b></div>
+      <div class="res-total"><span>TOTAL</span><b id="res-total">0</b></div>
+    </div>
+    <div class="res-actions">
+      <button id="btn-retry" class="btn btn-primary"><span class="ic" data-icon="redo"></span>Reintentar</button>
+      <a id="btn-home" class="btn btn-ghost" href="home.html"><span class="ic" data-icon="home"></span>Inicio</a>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/scripts/utils.js"></script>
+<script src="../assets/scripts/storage.js"></script>
+<script src="../assets/scripts/audio.js"></script>
+<script src="../assets/scripts/ui.js"></script>
+<script src="../assets/json/config.js"></script>
+<script src="../assets/json/characters.js"></script>
+<script src="../assets/json/maps.js"></script>
+<script src="../assets/json/shop.js"></script>
+<script src="../assets/scripts/db.js"></script>
+<script src="../assets/scripts/world.js"></script>
+<script src="../assets/scripts/engine.js"></script>
+<script src="../assets/scripts/page-game.js"></script>
+</body>
+</html>

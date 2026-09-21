@@ -1,0 +1,27 @@
+window.DB_DATA = window.DB_DATA || {};
+DB_DATA.characters = [
+  { id:'oveja', name:'Algodón', species:'Oveja', price:0, img:'char_oveja.png',
+    colors:{ body:'#F7F9FF', bodyDark:'#D6DEEA', bodyLight:'#FFFFFF', face:'#F4E3C2', accent:'#C9A06B' },
+    ability:{ type:'dash', auto:false, uses:1, name:'Balar Turbo', icon:'rocket', desc:'Suelta un impulso extra en la dirección en la que vas. 1 uso por vuelo.' },
+    phrase:'¡Beeeh, allá vamos!' },
+  { id:'abuelito', name:'Don Ramiro', species:'Abuelito', price:0, img:'char_abuelito.png',
+    colors:{ body:'#3E9A55', bodyDark:'#2F7A43', bodyLight:'#57B96E', face:'#F6CBA6', accent:'#8A5A3B' },
+    ability:{ type:'lowgrav', auto:true, uses:0, name:'Sabiduría', icon:'feather', desc:'Vuela con 10% menos de gravedad. Siempre activa.' },
+    phrase:'En mis tiempos volaba más.' },
+  { id:'albanil', name:'El Maestro', species:'Albañil', price:900, img:'char_albanil.png',
+    colors:{ body:'#3E9A55', bodyDark:'#2F7A43', bodyLight:'#57B96E', face:'#F6CBA6', accent:'#FFC93C' },
+    ability:{ type:'bounce', auto:true, uses:0, name:'Obra bien hecha', icon:'mattress', desc:'Su primer aterrizaje siempre rebota, como si fuera colchón de obra.' },
+    phrase:'La seguridad primero.' },
+  { id:'perrito', name:'Bombón', species:'Perrito', price:1400, img:'char_perrito.png',
+    colors:{ body:'#F7F9FF', bodyDark:'#D6DEEA', bodyLight:'#FFFFFF', face:'#F6CBA6', accent:'#E8B98B' },
+    ability:{ type:'magnet', auto:false, uses:2, name:'Nariz Dorada', icon:'magnet', desc:'Atrae las monedas cercanas durante 5 s. 2 usos por vuelo.' },
+    phrase:'¿Huelo a monedas?' },
+  { id:'abuelita', name:'Doña Lupita', species:'Abuelita', price:2200, img:'char_abuelita.png',
+    colors:{ body:'#3E7BC4', bodyDark:'#2F61A0', bodyLight:'#5A97D6', face:'#F6CBA6', accent:'#9AA7B4' },
+    ability:{ type:'glide', auto:false, uses:2, name:'Estilo Glorieta', icon:'wind', desc:'Planea con caída lenta durante 3 s. 2 usos por vuelo.' },
+    phrase:'Con calma, llegamos lejos.' },
+  { id:'nube', name:'Cúmulo', species:'Nube', price:3600, img:'char_nube.png',
+    colors:{ body:'#FFFFFF', bodyDark:'#D7EDF8', bodyLight:'#FFFFFF', face:'#FFFFFF', accent:'#9AD6F2' },
+    ability:{ type:'power', auto:true, uses:0, name:'Viento a Favor', icon:'gauge', desc:'+15% de potencia al ser lanzado. Siempre activa.' },
+    phrase:'Soy literalmente el cielo.' }
+];
