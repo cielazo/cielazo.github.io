@@ -20,10 +20,10 @@ DB_DATA.upgrades = [
 
 /* Paquetes de monedas con dinero real (SOLO VISUAL en esta demo) */
 DB_DATA.packs = [
-  { id:'pk1', coins:120, price:'$17.00 MXN' },
-  { id:'pk2', coins:350, price:'$39.00 MXN', tag:'Popular' },
-  { id:'pk3', coins:750, price:'$79.00 MXN', tag:'-10%' },
-  { id:'pk4', coins:2000, price:'$189.00 MXN', tag:'Mejor valor' }
+  { id:'pk1', name:'Puñado de monedas', coins:120,  price:'$17.00 MXN', img:'coins-small.png' },
+  { id:'pk2', name:'Bolsa de monedas',  coins:350,  price:'$39.00 MXN', img:'coins-medium.png', tag:'Popular' },
+  { id:'pk3', name:'Cofre de monedas',  coins:750,  price:'$79.00 MXN', img:'coins-large.png', tag:'-10%' },
+  { id:'pk4', name:'Tesoro de monedas', coins:2000, price:'$189.00 MXN', img:'coins-mega.png', tag:'Mejor valor' }
 ];
 
 /* Objetos de ayuda que aparecen en el mapa (img = tu PNG, si existe) */

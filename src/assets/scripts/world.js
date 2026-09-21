@@ -184,12 +184,39 @@ window.World = (function(){
       }
     }
   }
+  function treeBlob(ctx, bx, by, r, base, light, dark){
+    ctx.save();
+    ctx.beginPath(); ctx.arc(bx, by, r, 0, 7);
+    ctx.fillStyle = base; ctx.fill();
+    ctx.clip();
+    ctx.fillStyle = light;
+    ctx.beginPath(); ctx.arc(bx - r * .38, by - r * .42, r, 0, 7); ctx.fill();
+    ctx.fillStyle = dark;
+    ctx.beginPath(); ctx.arc(bx + r * .45, by + r * .5, r * 1.05, 0, 7); ctx.fill();
+    ctx.restore();
+  }
   function tree(ctx, x, gy, s, P){
-    blockC(ctx, x, gy, 20 * s, 12 * s, 36 * s, P.trunk);
-    blockC(ctx, x, gy - 28 * s, 96 * s, 56 * s, 54 * s, P.leaf);
-    blockC(ctx, x, gy - 74 * s, 58 * s, 34 * s, 30 * s, shade(P.leaf, .12));
-    blockC(ctx, x - 20 * s, gy - 60 * s, 26 * s, 16 * s, 18 * s, shade(P.leaf, -.08));
-    blockC(ctx, x + 24 * s, gy - 66 * s, 22 * s, 14 * s, 16 * s, shade(P.leaf, .2));
+    const L = P.leafLight, B = P.leaf, D = P.leafDark;
+    ctx.fillStyle = 'rgba(23,58,79,.13)';
+    ctx.beginPath(); ctx.ellipse(x, gy + 5, 40 * s, 10 * s, 0, 0, 7); ctx.fill();
+    /* tronco con raíces */
+    blockC(ctx, x, gy, 20 * s, 12 * s, 26 * s, P.trunk);
+    blockC(ctx, x - 10 * s, gy, 10 * s, 7 * s, 10 * s, shade(P.trunk, -.15));
+    blockC(ctx, x + 11 * s, gy, 10 * s, 7 * s, 10 * s, shade(P.trunk, -.15));
+    /* copa: racimo de esferas */
+    const cy = gy - 88 * s;
+    treeBlob(ctx, x - 34 * s, cy + 16 * s, 26 * s, shade(B, -.06), L, D);
+    treeBlob(ctx, x + 34 * s, cy + 14 * s, 24 * s, shade(B, -.06), L, D);
+    treeBlob(ctx, x, cy - 6 * s, 34 * s, B, L, D);
+    treeBlob(ctx, x - 14 * s, cy + 22 * s, 24 * s, B, L, D);
+    treeBlob(ctx, x + 16 * s, cy + 24 * s, 22 * s, shade(B, .04), L, D);
+    /* cubos flotantes: toque voxel */
+    blockC(ctx, x - 20 * s, cy - 34 * s, 14 * s, 9 * s, 12 * s, L);
+    blockC(ctx, x + 22 * s, cy - 30 * s, 12 * s, 8 * s, 10 * s, B);
+    /* frutos */
+    ctx.fillStyle = '#FF6B8A';
+    ctx.beginPath(); ctx.arc(x + 6 * s, cy + 30 * s, 4.5 * s, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(x - 30 * s, cy + 4 * s, 4.5 * s, 0, 7); ctx.fill();
   }
   function pine(ctx, x, gy, s, P, snowy){
     blockC(ctx, x, gy, 12 * s, 8 * s, 12 * s, P.trunk);

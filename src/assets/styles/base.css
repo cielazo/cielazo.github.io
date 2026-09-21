@@ -203,10 +203,11 @@ body {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   background: #fff;
   border-radius: 999px;
-  padding: 5px 6px 5px 13px;
+  height: 44px;
+  padding: 0 6px 0 14px;
   box-shadow: 0 4px 0 var(--line);
   font-weight: 700;
   font-size: 17px;
@@ -218,8 +219,8 @@ body {
 }
 
 .wallet .add {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 0;
   background: var(--grass);
@@ -228,6 +229,11 @@ body {
   display: grid;
   place-items: center;
   box-shadow: 0 3px 0 var(--grassD);
+}
+
+.wallet .add .ic {
+  width: 16px;
+  height: 16px;
 }
 
 .wallet .add .ic {
@@ -467,3 +473,8 @@ body {
     display: grid;
   }
 }
+
+.prof-stats{ display:flex; gap:8px; margin:2px 0 10px; }
+.pf{ flex:1; background:var(--card2); border-radius:14px; padding:9px 6px; text-align:center; }
+.pf b{ display:block; font-size:16px; }
+.pf i{ font-style:normal; font-size:10.5px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--ink2); }

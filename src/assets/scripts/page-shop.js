@@ -48,23 +48,18 @@
 
   function renderPacks(){
     packs.innerHTML = '';
-      const stackSVG = n => {
-      const L = [
-        [[24, 0, 52], [8, 10, 56], [0, 24, 58]],
-        [[14, 0, 56], [2, 16, 60]],
-        [[4, 4, 68]]
-      ][n - 1];
-      return `<div class="stack3d">${L.map(([x, y, s]) =>
-        `<img src="../assets/images/moneda.png" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px" draggable="false">`).join('')}</div>`;
-    };
     DB.packs.forEach(pk => {
       const el = document.createElement('div');
       el.className = 'pack';
       el.innerHTML = `
         ${pk.tag ? `<span class="tagchip">${U.esc(pk.tag)}</span>` : ''}
-        ${stackSVG(Math.min(3, 1 + DB.packs.indexOf(pk)))}
-        <div class="amount"><span class="ic" data-icon="coin"></span>${U.fmt(pk.coins)}</div>
-        <div class="fiat">${U.esc(pk.price)}</div>
+        <div class="pack-art"><img src="../assets/images/${pk.img}" alt="" draggable="false"
+          onerror="this.onerror=null;this.src='../assets/images/moneda.png'"></div>
+        <div class="pname">${U.esc(pk.name)}</div>
+        <div class="contenedor-precios-monedas">
+          <div class="amount"><span class="ic" data-icon="coin"></span>${U.fmt(pk.coins)}</div>
+          <div class="fiat">${U.esc(pk.price)}</div>
+        </div>
         <button class="btn btn-coral">Comprar</button>`;
       paintIcons(el);
       el.querySelector('button').addEventListener('click', () => {

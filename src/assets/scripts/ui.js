@@ -80,11 +80,16 @@ window.UI = {
       actions:[ { label:'Ahora no' }, { label:'Ver paquetes', kind:'btn-primary', icon:'cart', onClick:() => location.href = 'shop.html?tab=coins' } ]
     });
   },
-  settings(){
-    const st = Storage.get().settings;
-    const back = UI.modal({ title:'Ajustes', icon:'gear', body:`
-      <label class="row-set"><span class="ic" data-icon="sound"></span> Sonido <input type="checkbox" id="set-sound" class="sw" ${st.sound ? 'checked' : ''}></label>
-      <label class="row-set"><span class="ic" data-icon="vibrate"></span> Vibración <input type="checkbox" id="set-hap" class="sw" ${st.haptics ? 'checked' : ''}></label>
+    settings(){
+    const st = Storage.get();
+    const back = UI.modal({ title:'Tu perfil', icon:'person', body:`
+      <div class="prof-stats">
+        <div class="pf"><b>${U.kmFmt(st.best.global || 0)}</b><i>Récord</i></div>
+        <div class="pf"><b>${U.fmt(st.stats.games || 0)}</b><i>Partidas</i></div>
+        <div class="pf"><b>${U.fmt(st.stats.meters || 0)} m</b><i>Distancia</i></div>
+      </div>
+      <label class="row-set"><span class="ic" data-icon="sound"></span> Sonido <input type="checkbox" id="set-sound" class="sw" ${st.settings.sound ? 'checked' : ''}></label>
+      <label class="row-set"><span class="ic" data-icon="vibrate"></span> Vibración <input type="checkbox" id="set-hap" class="sw" ${st.settings.haptics ? 'checked' : ''}></label>
       <div class="set-ver">Cielazo v${DB.cfg.version} — demo</div>`,
       actions:[
         { label:'Restablecer progreso', kind:'btn-danger', onClick: close => { close(); UI.confirm({

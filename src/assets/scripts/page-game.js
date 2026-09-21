@@ -37,17 +37,32 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && game && !game.done) pause(); });
 
   function pause(){
-    if (!game || game.paused) return;
+    if (!game || game.paused || game.state === 'done') return;
     game.setPaused(true);
-    UI.modal({
-      title:'Pausa', icon:'pause', body:'<p>El vuelo está en espera.</p>',
-      onClose(){ game && game.setPaused(false); },
-      actions:[
-        { label:'Reanudar', kind:'btn-primary', icon:'play' },
-        { label:'Reintentar', icon:'redo', onClick: close => { close(); start(); } },
-        { label:'Salir', icon:'home', onClick: () => location.href = 'home.html' }
-      ]
-    });
+    const back = document.createElement('div'); back.className = 'mb';
+    const meters = Math.max(0, Math.round((game.maxX - game.cfg.launcherX) / game.cfg.ppm));
+    back.innerHTML = `
+      <div class="pause-card">
+        <div class="pause-head">
+          <span class="ph-ic"><span class="ic" data-icon="pause"></span></span>
+          <div><div class="ph-t">Pausa</div><div class="ph-s">El vuelo está en espera</div></div>
+        </div>
+        <div class="pause-stats">
+          <div class="ps"><span class="ic" data-icon="target"></span><b>${U.kmFmt(meters)}</b><i>Distancia</i></div>
+          <div class="ps"><span class="ic" data-icon="coin"></span><b>${U.fmt(game.collected)}</b><i>Monedas</i></div>
+        </div>
+        <button id="pv-resume" class="btn btn-primary pv-main"><span class="ic" data-icon="play"></span>Reanudar</button>
+        <div class="pv-row">
+          <button id="pv-retry" class="btn btn-ghost"><span class="ic" data-icon="redo"></span>Reintentar</button>
+          <button id="pv-home" class="btn btn-ghost"><span class="ic" data-icon="home"></span>Salir</button>
+        </div>
+      </div>`;
+    document.body.appendChild(back); paintIcons(back);
+    const close = () => { back.remove(); game && game.setPaused(false); };
+    back.addEventListener('click', e => { if (e.target === back) { SFX.click(); close(); } });
+    back.querySelector('#pv-resume').addEventListener('click', () => { SFX.click(); close(); });
+    back.querySelector('#pv-retry').addEventListener('click', () => { SFX.click(); close(); start(); });
+    back.querySelector('#pv-home').addEventListener('click', () => { SFX.click(); location.href = 'home.html'; });
   }
 
   start();
